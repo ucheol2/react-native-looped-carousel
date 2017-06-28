@@ -35,6 +35,7 @@ export default class Carousel extends Component {
     bullets: PropTypes.bool,
     bulletsContainerStyle: Text.propTypes.style,
     bulletStyle: Text.propTypes.style,
+    bulletsStyle: Text.propTypes.style,
     arrows: PropTypes.bool,
     arrowsContainerStyle: Text.propTypes.style,
     arrowStyle: Text.propTypes.style,
@@ -297,7 +298,7 @@ export default class Carousel extends Component {
         </TouchableWithoutFeedback>);
     }
     return (
-      <View style={styles.bullets} pointerEvents="box-none">
+      <View style={[styles.bullets, this.props.bulletsStyle]} pointerEvents="box-none">
         <View style={[styles.bulletsContainer, this.props.bulletsContainerStyle]} pointerEvents="box-none">
           {bullets}
         </View>
